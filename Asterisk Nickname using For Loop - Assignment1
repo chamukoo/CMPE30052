@@ -1,0 +1,31 @@
+#Programmed by: Lee Anne Y. Angeles
+
+printL = [[" " for i in range(5)] for j in range(5)]
+printE1 = [[" " for i in range(5)] for j in range(5)]
+printE2 = [[" " for i in range(5)] for j in range(5)]
+
+for row in range(5):
+    for col in range(5):
+        if col==0 or (row==4 and col>0):
+              printL[row][col]= "*"
+
+for row in range(5):
+    for col in range(5):
+        if col==0 or ((row==0 or row==2 or row==4) and (col>0)):
+            printE1[row][col]= "*"
+
+for row in range(5):
+    for col in range(5):
+        if col==0 or ((row==0 or row==2 or row==4) and (col>0)):
+            printE2[row][col]= "*"
+
+for i in range(5):
+    for j in range(5):
+        print('\033[34m' + printL[i][j],end="")
+    print(end="  ")
+    for j in range(5):
+        print('\033[33m' + printE1[i][j],end="")
+    print(end="  ")
+    for j in range(5):
+        print('\033[31m' + printE2[i][j],end="")
+    print("")
